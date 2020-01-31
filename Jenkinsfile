@@ -65,7 +65,7 @@ pipeline {
               stage('mail') {
         steps {
             
-               emailext (to: 'hemant14750@gmail.com', replyTo: 'hemant14750@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("/var/lib/jenkins/workspace/addressbook/addressbook_main/target/surefire-reports/*.txt"), mimeType: 'html/txt');
+               emailext (to: 'hemant14750@gmail.com', replyTo: 'hemant14750@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("/var/lib/jenkins/workspace/addressbook/addressbook_main/target/surefire-reports/com.edurekademo.utilities.TestLogger.txt"), mimeType: 'html/txt');
         }
     }
 
