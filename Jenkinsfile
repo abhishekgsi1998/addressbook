@@ -33,7 +33,7 @@ pipeline {
 
             stage('Build') {
 
-                  steps {
+                  steps { 
 
                         echo 'Building Sample Maven Project'
                         archiveArtifacts '**/*.war'
