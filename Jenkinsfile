@@ -22,7 +22,7 @@ pipeline {
 
        
                         echo 'COMPILE THE FILE'
-                        tool name: 'local maven', type: 'maven'
+                        tool name: 'local_mvn', type: 'maven'
                         sh 'mvn -f pom.xml package'
                         
 
