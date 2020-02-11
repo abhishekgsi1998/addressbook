@@ -11,7 +11,7 @@ pipeline {
                         echo 'Hi, this is Hemant from 3Pillar'
 
                         echo 'We are Starting the Testing'
-                        git 'https://github.com/HemantTomar/addressbook.git'
+                        git 'https://github.com/abhishekgsi1998/addressbook.git'
 
                   }
 
@@ -22,7 +22,7 @@ pipeline {
 
        
                         echo 'COMPILE THE FILE'
-                        tool name: 'Local_maven', type: 'maven'
+                        tool name: 'local maven', type: 'maven'
                         sh 'mvn -f pom.xml package'
                         
 
@@ -58,7 +58,7 @@ pipeline {
 
                         echo 'Deploying Sample Maven Project'
                         copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: 'addressbook', selector: lastWithArtifacts()
-                        deploy adapters: [tomcat9(credentialsId: '401dcb97-d3c5-4ffd-9f9e-8be2c777980e', path: '', url: 'http://3.19.67.153:9090/')], contextPath: '/', war: '**/*.war'
+                        deploy adapters: [tomcat8(credentialsId: '14d61449-17df-4401-8ab0-2fca8f2424a4', path: '', url: 'http://18.207.221.210:9090/')], contextPath: '/', war: '**/*.war'
                   }
 
             }
